@@ -1,5 +1,5 @@
 /*
-    Name: 
+    Name: Isaiah Guerrero
 */
 
 :root{
@@ -23,11 +23,6 @@
     --wht: #FDFEFF;
 
     /* Font Stack */
-    /* 
-        regular weight: 400
-        semi-bold: 600
-        extra-bold: 800
-    */
     --body-fonts: "mendl-sans-dusk", Georgia, sans-serif;
     --heading-fonts: "spirits-sharp", "Arial Black", sans-serif;
 
@@ -72,8 +67,11 @@ header{
     background-clip: border-box;
     background-position: right;
     background-size: contain;
-    /* Styles were added here to arrange the content, I used flexbox */
-    /* TO DO */
+
+    /* TO DO — FLEXBOX */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* For All Headings */
@@ -97,7 +95,6 @@ h1 a{
     color: var(--forest);
 }
 
-/* Link in the h1 on Hover/Focus */
 h1 a:hover, h1 a:focus{
     text-decoration: underline;
     outline: none;
@@ -135,8 +132,11 @@ nav{
 nav ul{
     list-style-type: none;
     padding: 0;
-    /* Styles were added here to arrange the content, I used flexbox */
-    /* TO DO */
+
+    /* TO DO — FLEXBOX */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav a{
@@ -163,12 +163,10 @@ nav a svg{
 nav a span{
     display: block;
     position: relative;
-    /* Styles were added here to arrange the content, I used top and z-index for this */
-    /* TO DO */
-}
 
-nav a:focus{
-    outline: none;
+    /* TO DO — POSITIONING */
+    top: -140px;
+    z-index: 10;
 }
 
 nav a:hover svg, nav a:focus svg{
@@ -180,13 +178,11 @@ a{
     color: var(--leaf);
 }
 
-/* Link Hover Styles */
 a:hover{
     color: var(--forest);
     text-decoration: none;
 }
 
-/* Link Focus Styles */
 a:focus{
     outline-color: var(--forest);
     outline-offset: 4px;
@@ -199,7 +195,6 @@ main{
     padding: 32px 0;
 }
 
-/* Paragraphs in the Main (Direct Descendants Only) */
 main > p{
     color: var(--wht);
     margin-bottom: 96px;
@@ -222,18 +217,24 @@ p{
 #plants{
     background-color: var(--wht);
     padding: 96px 32px;
-    /* Styles were added here to arrange the content, I used grid */
-    /* TO DO */
+
+    /* TO DO — GRID */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
 }
 
 #plants h3, #plants > p{
-    /* Styles were added here to arrange the content, these are grid children styles */
-    /* TO DO */
+    /* TO DO — CENTER GRID CHILDREN */
+    grid-column: 1 / -1;
+    text-align: center;
 }
 
 #plants section{
-    /* Styles were added here to arrange the content, I used flexbox */
-    /* TO DO */
+    /* TO DO — FLEXBOX CARD LAYOUT */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 32px auto 0;
 }
 
@@ -242,8 +243,8 @@ p{
 }
 
 #plants img{
-    /* Styles were added here to arrange the content, I used a property for a flexbox child to change the order that the content appears on the page */
-    /* TO DO */
+    /* TO DO — CHANGE ORDER */
+    order: -1;
     width: 100%;
     max-width: 400px;
     height: auto;
@@ -263,14 +264,17 @@ p{
 #contact{
     color: var(--wht);
     padding: 64px 32px;
-    /* Styles were added here to arrange the content, I used grid */
-    /* TO DO */
+
+    /* TO DO — GRID */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
 }
 
-/* Contact Heading and Paragraph */
 #contact h3, #contact > p{
-    /* Styles were added here to arrange the content, these are grid children styles */
-    /* TO DO */
+    /* TO DO — GRID CHILDREN STYLE */
+    grid-column: 1 / -1;
+    text-align: center;
 }
 
 /* Contact text color */
@@ -278,7 +282,6 @@ p{
     color: var(--wht);
 }
 
-/* Contact Links */
 #contact a{
     display: block;
     padding: 4px 0;
@@ -304,7 +307,6 @@ address{
     font-style: normal;
 }
 
-/* Address Anchors On Hover */
 address a:hover{
     text-decoration: none;
 }
@@ -330,7 +332,6 @@ caption{
     letter-spacing: 1px;
 }
 
-/* Other Table Styles */
 th{
     font-size: 1.5rem;
     font-weight: 600;
@@ -353,20 +354,22 @@ th:nth-of-type(even), td:nth-of-type(even){
     padding: 0;
 }
 
-/* Social Media List */
 #social ul{
-    /* Styles were added here to arrange the content, I used grid */
-    /* TO DO */
+    /* TO DO — GRID */
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 16px;
+
     width: fit-content;
     margin: 16px auto;
     list-style-type: none;
     padding: 0;
 }
 
-/* Heading for Social Media Section */
 #social h4{
-    /* Styles were added here to arrange the content, these are grid children styles */
-    /* TO DO */
+    /* TO DO — CENTER ON GRID */
+    grid-column: 1 / -1;
+    text-align: center;
 }
 
 #social a{
@@ -374,25 +377,22 @@ th:nth-of-type(even), td:nth-of-type(even){
     padding: 8px 12px 0 12px;
 }
 
-/* Social Media Icons */
+/* Social Icons */
 #social svg{
     stroke: var(--wht);
 }
 
-/* Social Media Icons on Hover */
 #social a:hover svg{
     fill: var(--wht);
     stroke: var(--forest);
-
 }
 
-/* Social Media Icons on Focus */
 #social a:focus{
     outline: 2px solid var(--mint);
     outline-offset: 2px;
 }
 
-/* Spans to Mark Required Form Inputs */
+/* Required Icon */
 .required svg{
     display: inline-block;
     padding-left: 4px;
@@ -407,14 +407,12 @@ form{
     margin: 0 auto;
 }
 
-/* Form Labels/Widgets */
 label, input, textarea{
     display: block;
     font-size: 1.25rem;
     width: calc(100% - 10px);
 }
 
-/* Labels */
 label{
     margin: 12px 0 8px 0;
     font-size: 1.5rem;
@@ -459,7 +457,7 @@ input:focus, input:focus-visible, textarea:focus, textarea:focus-visible{
     outline: none;
 }
 
-/* Plant-Row Div */
+/* Plant Row */
 #plant-row{
     width: 100%;
     max-width: 1280px;
@@ -473,7 +471,7 @@ input:focus, input:focus-visible, textarea:focus, textarea:focus-visible{
     background-size: cover;
 }
 
-/* Back to Top of Page Link */
+/* Back to Top Button */
 #btt{
     display: block;
     line-height: 0;
